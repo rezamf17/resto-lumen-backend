@@ -47,4 +47,12 @@ class CustomerController extends Controller
             'message' => 'delete success'
         ]);
     }
+
+    public function countCustomer()
+    {
+        $customer = Customer::all()->count();
+        return response()->json([
+            'total_customer' => $customer
+        ]);
+    }
 }

@@ -53,5 +53,12 @@ class CategoryController extends Controller
         ], 201);
     }
 
+    public function countCategory()
+    {
+        $category = Category::all()->count();
+        return response()->json([
+            'total_category' => $category
+        ]);
+    }
     //
 }

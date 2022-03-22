@@ -42,19 +42,23 @@ $router->group([
     // Matches "/api/users
     $router->get('allMenu', 'MenuController@index');
     $router->get('/allCategory', 'CategoryController@index');
+    $router->get('count-menu', 'MenuController@countMenu');
     $router->get('users', 'UserController@allUsers');
     $router->post('addMenu', 'MenuController@addMenu');
     $router->put('editMenu/{id}', 'MenuController@editMenu');
     $router->delete('deleteMenu/{id}', 'MenuController@deleteMenu');
     $router->post('addCategory', 'CategoryController@addCategory');
+    $router->get('count-category', 'CategoryController@countCategory');
     $router->put('editCategory/{id}', 'CategoryController@editCategory');
     $router->delete('deleteCategory/{id}', 'CategoryController@deleteCategory');
 
     //orders & customer
     $router->get('getOrders', 'OrderController@getOrder');
     $router->get('pdfOrders/{id}', 'OrderController@pdfOrder');
+    $router->get('count-order', 'OrderController@countOrder');
     $router->get('getDetailOrder/{id}', 'OrderController@getDetailOrder');
     $router->get('getCustomers', 'CustomerController@getCustomer');
+    $router->get('count-customer', 'CustomerController@countCustomer');
     $router->delete('deleteCustomers/{id}', 'CustomerController@deleteCustomer');
 
 });

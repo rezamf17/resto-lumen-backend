@@ -66,6 +66,7 @@ class AuthController extends Controller
         //     'user' => Auth::user()
         // ]);
         return response()->json([
+            'respond' => $this->respondWithToken($token),
             'token' => $token,
             'user' => Auth::user()->load('image')
         ]);

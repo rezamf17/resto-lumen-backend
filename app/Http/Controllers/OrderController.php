@@ -62,8 +62,16 @@ class OrderController extends Controller
         $data = Order::where('id_customer', $id)->with('menus')->get();
         $customer = Order::where('id_customer', $id)->with('customers')->first();
         $pdf = PDF::loadView('pdfOrder', compact('data', 'customer'));
-        // return $pdf->download('Resto-Lumen-Orders.pdf');
-        return $pdf->stream();
+        return $pdf->download('Resto-Lumen-Orders.pdf');
+        // return $pdf->stream();
+    }
+
+    public function countOrder()
+    {
+        $order = Order::all()->count();
+        return response()->json([
+            'total_order' => $order
+        ]);
     }
 
 }

@@ -60,5 +60,12 @@ class MenuController extends Controller
         ], 201);
     }
 
+    public function countMenu()
+    {
+        $menu = Menu::all()->count();
+        return response()->json([
+            'total_menu' => $menu
+        ]);
+    }
     //
 }
