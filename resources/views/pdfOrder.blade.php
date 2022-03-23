@@ -19,6 +19,7 @@
 <body>
     <h3>RESTO-LUMEN REPORT ORDERS</h3>
     <p>Customer Name : {{$customer->customers->customer_name}}</p>
+    <p>Total Price : Rp. {{$customer->customers->total_price}}</p>
     <p>Qty : {{$customer->qty}}</p>
     <table>
         <thead>
